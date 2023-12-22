@@ -8,7 +8,7 @@ This is the official repository for "Revisiting Computer-Aided Tuberculosis Diag
 
 Tuberculosis (TB) is a major global health threat, causing millions of deaths annually. Although early diagnosis and treatment can greatly improve the chances of survival, it remains a major challenge, especially in developing countries. Recently, computer-aided tuberculosis diagnosis (CTD) using deep learning has shown promise, but progress is hindered by limited training data. To address this, we establish a large-scale dataset, namely the **Tuberculosis X-ray (TBX11K)** dataset, which contains 11,200 chest X-ray (CXR) images with corresponding bounding box annotations for TB areas. This dataset enables the training of sophisticated detectors for high-quality CTD. Furthermore, we leverage the *bilateral symmetry property* of CXR images to propose a strong baseline, **SymFormer**, for simultaneous CXR image classification and TB infection area detection. To promote future research on CTD, we build a benchmark by introducing evaluation metrics, evaluating baseline models reformed from existing detectors, and running an online challenge.
 
-This work extends the preliminary CVPR 2020 version ("Rethinking computer-aided tuberculosis diagnosis", CVPR 2020, Oral) by proposing a novel SymFormer framework for CTD and validating its effectiveness with extensive experiments.
+This work extends the preliminary CVPR 2020 version ("Rethinking Computer-aided Tuberculosis Diagnosis", CVPR 2020, Oral) by proposing a novel SymFormer framework for CTD and validating its effectiveness with extensive experiments.
 
 ### Related Links
 
@@ -26,11 +26,6 @@ This work extends the preliminary CVPR 2020 version ("Rethinking computer-aided 
 * mmcv==1.3.12
 
 Run `pip install -v -e .` to install this repository.
-
-### Visualization
-<center>
-<img src="resources/vis.png" width="1000">
-</center>
 
 ### TBX11K Dataset
 
@@ -232,20 +227,28 @@ Download TBX11K dataset: [TBX11K](https://mmcheng.net/tb/).
     </tr>
 </table>
 
+### Visualization
+
+<img src="resources/vis.png" width="1000">
+
+**Visualization of the learned deep features from CXR images using SymFormer w/ RetinaNet.** We randomly select CXR images from the TBX11K test set. In each example, the infection areas of active TB, latent TB, and uncertain TB are indicated by boxes colored in green, red, and blue, respectively. The ground-truth boxes are displayed with thick lines, while the detected boxes are shown with thin lines.
 
 ### Train
-Download pretrained model: [P2T_small](https://drive.google.com/file/d/1FlwhyVKw0zqj2mux248gIQFQ8DGPi8rS/view?usp=sharing).
+
+Here, we show the training/testing commands by using P2T-Small as the backbone network and RetinaNet as the base detector.
+
+Download the ImageNet-pretrained model first: [P2T-Small](https://drive.google.com/file/d/1FlwhyVKw0zqj2mux248gIQFQ8DGPi8rS/view?usp=sharing).
 
 Use the following commands to train `SymFormer`:
 
 ```bash
-# train detection
+# step I: train detection
 CUDA_VISIBLE_DEVICE=0 python tools/train.py \
     configs/symformer/symformer_retinanet_p2t_fpn_2x_TBX11K.py \
     --work-dir work_dirs/symformer_retinanet_p2t/ \
     --no-validate
 
-# train classification
+# step II: train classification
 CUDA_VISIBLE_DEVICES=0 python tools/train.py \
     configs/symformer/symformer_retinanet_p2t_cls_fpn_1x_TBX11K.py \
     --work-dir work_dirs/symformer_retinanet_p2t_cls/ \
@@ -272,7 +275,7 @@ We only release the training and validation sets of the proposed TBX11K dataset.
 
 ### Citation
 
-If you are using the code/model/data provided here in a publication, please consider citing our works:
+If you are using the code/model/data provided here in a publication, please consider citing our papers:
 
 ```
 @article{liu2023revisiting,
@@ -283,7 +286,7 @@ If you are using the code/model/data provided here in a publication, please cons
 }
 
 @inproceedings{liu2020rethinking,
-  title={Rethinking computer-aided tuberculosis diagnosis},
+  title={Rethinking Computer-aided Tuberculosis Diagnosis},
   author={Liu, Yun and Wu, Yu-Huan and Ban, Yunfeng and Wang, Huifang and Cheng, Ming-Ming},
   booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   pages={2646--2655},
@@ -291,6 +294,26 @@ If you are using the code/model/data provided here in a publication, please cons
 }
 ```
 
-### License
+This repository exemplifies the training/testing commands by using P2T-Small as the backbone network and RetinaNet as the base detector:
 
-This code is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License for Non-Commercial use only. Any commercial use should get formal permission first.
+```
+@article{wu2022p2t,
+  title={P2T: Pyramid Pooling Transformer for Scene Understanding},
+  author={Wu, Yu-Huan and Liu, Yun and Zhan, Xin and Cheng, Ming-Ming},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume={45},
+  number={11},
+  pages={12760--12771},
+  year={2023},
+  publisher={IEEE}
+}
+
+@inproceedings{lin2017focal,
+  title={Focal Loss for Dense Object Detection},
+  author={Lin, Tsung-Yi and Goyal, Priya and Girshick, Ross and He, Kaiming and Doll{\'a}r, Piotr},
+  booktitle={IEEE International Conference on Computer Vision},,
+  pages={2980--2988},
+  year={2017}
+}
+```
+
