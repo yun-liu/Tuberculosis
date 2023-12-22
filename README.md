@@ -114,13 +114,16 @@ Run `pip install -v -e .` to install this repository.
 | SymFormer w/ RetinaNet       | ResNet-50 w/ FPN | 94.5     | 98.9     | 91.0        | 96.8        | 93.3 | 94.0 | [[JSON]](resources/result_files/SymFormer_RetinaNet_R50.json) [[TXT]](resources/result_files/SymFormer_RetinaNet_R50.txt) |
 | SymFormer w/ RetinaNet       | P2T-Small w/ FPN | 94.6     | 99.1     | 92.1        | 96.7        | 93.4 | 94.2 | [[JSON]](resources/result_files/SymFormer_RetinaNet_P2T.json) [[TXT]](resources/result_files/SymFormer_RetinaNet_P2T.txt) |
 
+TP: True Positives; TN: True Negatives; FP: False Positives; FN: False Negatives. 
 
-| Methods                                  | Backbones        | \#FLOPs | \#Params | FPS  | $F_1$ score $\uparrow$ | TP/\#Total $\uparrow$ | TN/\#Total $\uparrow$ | FP/\#Total $\downarrow$ | FN/\#Total $\downarrow$ |
-|------------------------------------------|------------------|---------|----------|------|------------------------|-----------------------|-----------------------|-------------------------|-------------------------|
-| Deformable DETR | ResNet-50 w/ FPN | 54.07   | 52.67    | 23.0 | 85.6                   | 17.5                  | 76.6                  | 3.8                     | 2.1                     |
-| SymFormer w/ Deformable DETR             | ResNet-50 w/ FPN | 54.08   | 52.69    | 22.5 | 87.9                   | 17.1                  | 78.2        | 2.2            | 2.5                     |
-| SymFormer w/ RetinaNet                   | ResNet-50 w/ FPN | 59.14   | 50.03    | 24.3 | 89.0                   | 17.8                  | 77.8                  | 2.6                     | 1.8                     |
-| SymFormer w/ RetinaNet                   | P2T-Small w/ FPN | 55.46   | 45.10    | 17.9 | 89.6          | 18.1         | 77.7                  | 2.7                     | 1.5            |
+`\#Total` denotes the total number of test CXR images. We test FPS on a single TITAN XP GPU. For the ground truths, the ratio of positives (TP + FN) is 19.6%, and the ratio of negatives (TN + FP) is 80.4%.
+
+| Methods                      | Backbones        | \#FLOPs | \#Params | FPS  | $F_1$ | TP/\#Total | TN/\#Total | FP/\#Total | FN/\#Total |
+|------------------------------|------------------|---------|----------|------|-------|------------|------------|------------|------------|
+| Deformable DETR              | ResNet-50 w/ FPN | 54.07   | 52.67    | 23.0 | 85.6  | 17.5       | 76.6       | 3.8        | 2.1        |
+| SymFormer w/ Deformable DETR | ResNet-50 w/ FPN | 54.08   | 52.69    | 22.5 | 87.9  | 17.1       | 78.2       | 2.2        | 2.5        |
+| SymFormer w/ RetinaNet       | ResNet-50 w/ FPN | 59.14   | 50.03    | 24.3 | 89.0  | 17.8       | 77.8       | 2.6        | 1.8        |
+| SymFormer w/ RetinaNet       | P2T-Small w/ FPN | 55.46   | 45.10    | 17.9 | 89.6  | 18.1       | 77.7       | 2.7        | 1.5        |
 
 
 #### TB infection area detection results on our TBX11K test set.
@@ -269,7 +272,8 @@ CUDA_VISIBLE_DEVICES=0 python -W ignore tools/test.py \
 ```
 
 ### Online Challenge
-We only release the training and validation sets of the proposed TBX11K dataset. The test set is retained as an online challenge for simultaneous TB X-ray classification and TB area detection in a single system (e.g., a convolutional neural network). To participate this challenge, you need to create an account on [CodaLab](https://codalab.lisn.upsaclay.fr/) and register for the [TBX11K Tuberculosis Classification and Detection Challenge](https://codalab.lisn.upsaclay.fr/competitions/7916). Please refer to this [webpage](https://codalab.lisn.upsaclay.fr/competitions/7916#learn_the_details-evaluation) or our paper to see the evaluation metrics. Then, open the “Participate” tab to read the [submission guidelines](https://codalab.lisn.upsaclay.fr/competitions/7916#participate) carefully. Next, you can upload your submission. Once uploaded, your submissions will be evaluated automatically.
+
+We only release the ground truths for the training and validation sets of our TBX11K dataset. The test set is retained as an online challenge for TB X-ray classification and TB infection area detection. To participate this challenge, you need to create an account on [CodaLab](https://codalab.lisn.upsaclay.fr/) and register for the [TBX11K Tuberculosis Classification and Detection Challenge](https://codalab.lisn.upsaclay.fr/competitions/7916). Please refer to this [webpage](https://codalab.lisn.upsaclay.fr/competitions/7916#learn_the_details-evaluation) or our paper to see the evaluation metrics. Then, open the "Participate" tab to read the [submission guidelines](https://codalab.lisn.upsaclay.fr/competitions/7916#participate) carefully. Next, you can upload your submission. Once uploaded, your submissions will be evaluated automatically.
 
 
 ### Citation
