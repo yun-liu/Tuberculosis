@@ -31,13 +31,13 @@ Run `pip install -v -e .` to install this repository.
 
 **Summary of publicly available TB datasets.** The size of our dataset is about $17\times$ larger than that of the previous largest dataset. Besides, our dataset annotates TB infection areas with bounding boxes, instead of only image-level labels.
 
-| Datasets      | Pub. Year   | \#Classes | Annotations  | \#Samples |
-|---------------|-------------|-----------|--------------|-----------|
-| MC            | 2014        | 2         | Image-level  | 138       |
-| Shenzhen      | 2014        | 2         | Image-level  | 662       |
-| DA            | 2014        | 2         | Image-level  | 156       |
-| DB            | 2014        | 2         | Image-level  | 150       |
-| TBX11K (Ours) | 2020 & 2023 | 4         | Bounding box | 11,200    |
+| Datasets      | Pub. Year   | #Classes | Annotations  | #Samples |
+|---------------|-------------|----------|--------------|----------|
+| MC            | 2014        | 2        | Image-level  | 138      |
+| Shenzhen      | 2014        | 2        | Image-level  | 662      |
+| DA            | 2014        | 2        | Image-level  | 156      |
+| DB            | 2014        | 2        | Image-level  | 150      |
+| TBX11K (Ours) | 2020 & 2023 | 4        | Bounding box | 11,200   |
 
 **Split for the TBX11K dataset.** `Active & Latent TB` refers to CXR images with both active and latent TB; `Active TB` refers to CXR images with only active TB; `Latent TB` refers to CXR images with only latent TB; `Uncertain TB` refers to TB CXR images where the type of TB infection cannot be recognized using current medical conditions.
 
