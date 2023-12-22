@@ -109,14 +109,10 @@ Run `pip install -v -e .` to install this repository.
 
 | Methods                      | Backbones        | Accuracy | AUC (TB) | Sensitivity | Specificity | AP   | AR   | Result |
 |------------------------------|------------------|----------|----------|-------------|-------------|------|------|--------|
-| Deformable DETR              | ResNet-50 w/ FPN | 91.3     | 97.6     | 89.2        | 95.3        | 89.8 | 91.0 | 
-    [[JSON]](resources/result_files/Deformable.json) [[TXT]](resources/result_files/Deformable.txt) |
-| SymFormer w/ Deformable DETR | ResNet-50 w/ FPN | 94.3     | 98.5     | 87.3        | 97.3        | 93.2 | 93.2 | 
-    [[JSON]](resources/result_files/SymFormer_Deformable.json) [[TXT]](resources/result_files/SymFormer_Deformable.txt) |
-| SymFormer w/ RetinaNet       | ResNet-50 w/ FPN | 94.5     | 98.9     | 91.0        | 96.8        | 93.3 | 94.0 | 
-    [[JSON]](resources/result_files/SymFormer_RetinaNet_R50.json) [[TXT]](resources/result_files/SymFormer_RetinaNet_R50.txt) |
-| SymFormer w/ RetinaNet       | P2T-Small w/ FPN | 94.6     | 99.1     | 92.1        | 96.7        | 93.4 | 94.2 | 
-    [[JSON]](resources/result_files/SymFormer_RetinaNet_P2T.json) [[TXT]](resources/result_files/SymFormer_RetinaNet_P2T.txt) |
+| Deformable DETR              | ResNet-50 w/ FPN | 91.3     | 97.6     | 89.2        | 95.3        | 89.8 | 91.0 | [[JSON]](resources/result_files/Deformable.json) [[TXT]](resources/result_files/Deformable.txt) |
+| SymFormer w/ Deformable DETR | ResNet-50 w/ FPN | 94.3     | 98.5     | 87.3        | 97.3        | 93.2 | 93.2 | [[JSON]](resources/result_files/SymFormer_Deformable.json) [[TXT]](resources/result_files/SymFormer_Deformable.txt) |
+| SymFormer w/ RetinaNet       | ResNet-50 w/ FPN | 94.5     | 98.9     | 91.0        | 96.8        | 93.3 | 94.0 | [[JSON]](resources/result_files/SymFormer_RetinaNet_R50.json) [[TXT]](resources/result_files/SymFormer_RetinaNet_R50.txt) |
+| SymFormer w/ RetinaNet       | P2T-Small w/ FPN | 94.6     | 99.1     | 92.1        | 96.7        | 93.4 | 94.2 | [[JSON]](resources/result_files/SymFormer_RetinaNet_P2T.json) [[TXT]](resources/result_files/SymFormer_RetinaNet_P2T.txt) |
 
 
 | Methods                                  | Backbones        | \#FLOPs | \#Params | FPS  | $F_1$ score $\uparrow$ | TP/\#Total $\uparrow$ | TN/\#Total $\uparrow$ | FP/\#Total $\downarrow$ | FN/\#Total $\downarrow$ |
