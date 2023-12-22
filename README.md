@@ -18,6 +18,7 @@ This work extends the preliminary CVPR 2020 version ("Rethinking Computer-aided 
 [[Dataset on Baidu Yunpan]](https://pan.baidu.com/s/1INhqaZyPFKWPFXgynerXew)
 [[Online Challenge]](https://codalab.lisn.upsaclay.fr/competitions/7916)
 [[中译版]](https://yun-liu.github.io/materials/TPAMI2023_Tuberculosis_CN.pdf)
+[[Official Version]](https://ieeexplore.ieee.org/document/10310292)
 
 ### Requirements:
 
@@ -29,16 +30,17 @@ Run `pip install -v -e .` to install this repository.
 
 ### TBX11K Dataset
 
-#### Summary of publicly available TB datasets.
-| Datasets                      | Pub. Year | \#Classes | Annotations  | \#Samples |
-|-------------------------------|-----------|-----------|--------------|-----------|
-| MC \cite{jaeger2014two}       | 2014      | 2         | Image-level  | 138       |
-| Shenzhen \cite{jaeger2014two} | 2014      | 2         | Image-level  | 662       |
-| DA \cite{chauhan2014role}     | 2014      | 2         | Image-level  | 156       |
-| DB \cite{chauhan2014role}     | 2014      | 2         | Image-level  | 150       |
-| TBX11K (Ours)                 | 2020&2023         | 4         | Bounding box | 11,200    |
+**Summary of publicly available TB datasets.** The size of our dataset is about $17\times$ larger than that of the previous largest dataset. Besides, our dataset annotates TB infection areas with bounding boxes, instead of only image-level labels.
 
-#### Split for the TBX11K dataset
+| Datasets      | Pub. Year   | \#Classes | Annotations  | \#Samples |
+|---------------|-------------|-----------|--------------|-----------|
+| MC            | 2014        | 2         | Image-level  | 138       |
+| Shenzhen      | 2014        | 2         | Image-level  | 662       |
+| DA            | 2014        | 2         | Image-level  | 156       |
+| DB            | 2014        | 2         | Image-level  | 150       |
+| TBX11K (Ours) | 2020 & 2023 | 4         | Bounding box | 11,200    |
+
+** Split for the TBX11K dataset.** `Active & Latent TB` refers to CXR images with both active and latent TB; `Active TB` refers to CXR images with only active TB; `Latent TB` refers to CXR images with only latent TB; `Uncertain TB` refers to TB CXR images where the type of TB infection cannot be recognized using current medical conditions.
 
 <table>
     <tr>
@@ -58,7 +60,7 @@ Run `pip install -v -e .` to install this repository.
         <td>5,000</td>
     </tr>
     <tr>
-        <td>Sick&Non-TB</td>
+        <td>Sick & Non-TB</td>
         <td>3,000</td>
         <td>800</td>
         <td>1,200</td>
@@ -80,7 +82,7 @@ Run `pip install -v -e .` to install this repository.
         <td>212</td>
     </tr>
     <tr>
-        <td>Active&Latent TB</td>
+        <td>Active & Latent TB</td>
         <td>23</td>
         <td>7</td>
         <td>24</td>
@@ -101,8 +103,6 @@ Run `pip install -v -e .` to install this repository.
         <td>11,200</td>
     </tr>
 </table>
-
-Download TBX11K dataset: [TBX11K](https://mmcheng.net/tb/).
 
 ### SymFormer
 
