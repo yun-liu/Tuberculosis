@@ -18,7 +18,6 @@ This work extends the preliminary CVPR 2020 version ("Rethinking Computer-aided 
 [[Dataset on Baidu Yunpan]](https://pan.baidu.com/s/1INhqaZyPFKWPFXgynerXew)
 [[Online Challenge]](https://codalab.lisn.upsaclay.fr/competitions/7916)
 [[中译版]](https://yun-liu.github.io/materials/TPAMI2023_Tuberculosis_CN.pdf)
-[[Official Version]](https://ieeexplore.ieee.org/document/10310292)
 
 ### Requirements:
 
