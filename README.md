@@ -1,4 +1,4 @@
-## [[TPAMI23] Revisiting Computer-Aided Tuberculosis Diagnosis](https://mmcheng.net/tb/)
+## [[TPAMI'2023] Revisiting Computer-Aided Tuberculosis Diagnosis](https://mmcheng.net/tb/)
 
 This is the official repository for "Revisiting Computer-Aided Tuberculosis Diagnosis". 
 
@@ -9,7 +9,14 @@ Related links:
 [[Dataset on Baidu Yunpan]](https://pan.baidu.com/s/1INhqaZyPFKWPFXgynerXew)
 [[Online Challenge]](https://codalab.lisn.upsaclay.fr/competitions/7916)
 [[中译版]](https://yun-liu.github.io/materials/TPAMI2023_Tuberculosis_CN.pdf)
-[[Official Version]](https://ieeexplore.ieee.org/document/10310292)
+
+<center>
+<img src="resources/teaser.jpg" width="500">
+</center>
+
+### Introduction
+
+Tuberculosis (TB) is a major global health threat, causing millions of deaths annually. Although early diagnosis and treatment can greatly improve the chances of survival, it remains a major challenge, especially in developing countries. Recently, computer-aided tuberculosis diagnosis (CTD) using deep learning has shown promise, but progress is hindered by limited training data. To address this, we establish a large-scale dataset, namely the **Tuberculosis X-ray (TBX11K)** dataset, which contains 11,200 chest X-ray (CXR) images with corresponding bounding box annotations for TB areas. This dataset enables the training of sophisticated detectors for high-quality CTD. Furthermore, we leverage the *bilateral symmetry property* of CXR images to propose a strong baseline, **SymFormer**, for simultaneous CXR image classification and TB infection area detection. To promote future research on CTD, we build a benchmark by introducing evaluation metrics, evaluating baseline models reformed from existing detectors, and running an online challenge.
 
 ### Requirements:
 
@@ -18,14 +25,6 @@ Related links:
 * mmcv==1.3.12
 
 Run `pip install -v -e .` to install this repository.
-
-### Introduction
-
-"Revisiting Computer-Aided Tuberculosis Diagnosis" focuses on addressing challenges in tuberculosis (TB) diagnosis using deep learning. We introduces a large-scale dataset, TBX11K, which significantly enhances computer-aided TB diagnosis (CTD) capabilities. TBX11K contains 11,200 chest X-ray images with detailed annotations for TB infection areas. A novel framework, SymFormer, is proposed, leveraging bilateral symmetry in X-ray images for effective TB detection. SymFormer integrates Symmetric Search Attention and Symmetric Positional Encoding, significantly improving TB detection and classification. We also presents a benchmark for CTD, incorporating various evaluation metrics and baseline models, and launches an online challenge to facilitate future research in the field.
-
-<center>
-<img src="resources/teaser.jpg" width="500">
-</center>
 
 ### Visualization
 <center>
