@@ -2,21 +2,22 @@
 
 This is the official repository for "Revisiting Computer-Aided Tuberculosis Diagnosis". 
 
-Related links:
+<img src="resources/teaser.jpg" width="500">
+
+### Introduction
+
+Tuberculosis (TB) is a major global health threat, causing millions of deaths annually. Although early diagnosis and treatment can greatly improve the chances of survival, it remains a major challenge, especially in developing countries. Recently, computer-aided tuberculosis diagnosis (CTD) using deep learning has shown promise, but progress is hindered by limited training data. To address this, we establish a large-scale dataset, namely the **Tuberculosis X-ray (TBX11K)** dataset, which contains 11,200 chest X-ray (CXR) images with corresponding bounding box annotations for TB areas. This dataset enables the training of sophisticated detectors for high-quality CTD. Furthermore, we leverage the *bilateral symmetry property* of CXR images to propose a strong baseline, **SymFormer**, for simultaneous CXR image classification and TB infection area detection. To promote future research on CTD, we build a benchmark by introducing evaluation metrics, evaluating baseline models reformed from existing detectors, and running an online challenge.
+
+This work extends the preliminary CVPR 2020 version ("Rethinking computer-aided tuberculosis diagnosis", CVPR 2020, Oral) by proposing a novel SymFormer framework for CTD and validating its effectiveness with extensive experiments.
+
+### Related Links
+
 [[PDF]](https://yun-liu.github.io/papers/(TPAMI'2023)Revisiting%20Computer-Aided%20Tuberculosis%20Diagnosis.pdf)
 [[Project Page]](https://mmcheng.net/tb/)
 [[Dataset on Google Drive]](https://drive.google.com/file/d/1r-oNYTPiPCOUzSjChjCIYTdkjBTugqxR/view?usp=sharing)
 [[Dataset on Baidu Yunpan]](https://pan.baidu.com/s/1INhqaZyPFKWPFXgynerXew)
 [[Online Challenge]](https://codalab.lisn.upsaclay.fr/competitions/7916)
 [[中译版]](https://yun-liu.github.io/materials/TPAMI2023_Tuberculosis_CN.pdf)
-
-<center>
-<img src="resources/teaser.jpg" width="500">
-</center>
-
-### Introduction
-
-Tuberculosis (TB) is a major global health threat, causing millions of deaths annually. Although early diagnosis and treatment can greatly improve the chances of survival, it remains a major challenge, especially in developing countries. Recently, computer-aided tuberculosis diagnosis (CTD) using deep learning has shown promise, but progress is hindered by limited training data. To address this, we establish a large-scale dataset, namely the **Tuberculosis X-ray (TBX11K)** dataset, which contains 11,200 chest X-ray (CXR) images with corresponding bounding box annotations for TB areas. This dataset enables the training of sophisticated detectors for high-quality CTD. Furthermore, we leverage the *bilateral symmetry property* of CXR images to propose a strong baseline, **SymFormer**, for simultaneous CXR image classification and TB infection area detection. To promote future research on CTD, we build a benchmark by introducing evaluation metrics, evaluating baseline models reformed from existing detectors, and running an online challenge.
 
 ### Requirements:
 
