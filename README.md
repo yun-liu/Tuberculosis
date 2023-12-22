@@ -1,10 +1,15 @@
-## [TPAMI23] Revisiting Computer-Aided Tuberculosis Diagnosis
+## [[TPAMI23] Revisiting Computer-Aided Tuberculosis Diagnosis](https://mmcheng.net/tb/)
 
-This is the official repository for Revisiting Computer-Aided Tuberculosis Diagnosis. 
+This is the official repository for "Revisiting Computer-Aided Tuberculosis Diagnosis". 
 
 Related links:
-[[Official PDF Download]](https://mftp.mmcheng.net/Papers/23PAMI-Tuberculosis.pdf)
-[[中译版全文]](https://mftp.mmcheng.net/Papers/23PAMI-Tuberculosis-cn.pdf)
+[[PDF]](https://yun-liu.github.io/papers/(TPAMI'2023)Revisiting%20Computer-Aided%20Tuberculosis%20Diagnosis.pdf)
+[[Project Page]](https://mmcheng.net/tb/)
+[[Dataset on Google Drive]](https://drive.google.com/file/d/1r-oNYTPiPCOUzSjChjCIYTdkjBTugqxR/view?usp=sharing)
+[[Dataset on Baidu Yunpan]](https://pan.baidu.com/s/1INhqaZyPFKWPFXgynerXew)
+[[Online Challenge]](https://codalab.lisn.upsaclay.fr/competitions/7916)
+[[中译版]](https://yun-liu.github.io/materials/TPAMI2023_Tuberculosis_CN.pdf)
+[[Official Version]](https://ieeexplore.ieee.org/document/10310292)
 
 ### Requirements:
 
@@ -269,30 +274,22 @@ We only release the training and validation sets of the proposed TBX11K dataset.
 
 If you are using the code/model/data provided here in a publication, please consider citing our works:
 
-````
-@inproceedings{liu2020rethinking,
-  title={Rethinking computer-aided tuberculosis diagnosis},
-  author={Liu, Yun and Wu, Yu-Huan and Ban, Yunfeng and Wang, Huifang and Cheng, Ming-Ming},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={2646--2655},
-  year={2020}
-}
-
-@article{wu2022p2t,
-  title={P2T: Pyramid pooling transformer for scene understanding},
-  author={Wu, Yu-Huan and Liu, Yun and Zhan, Xin and Cheng, Ming-Ming},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2022},
-  publisher={IEEE}
-}
-
+```
 @article{liu2023revisiting,
   title={Revisiting Computer-Aided Tuberculosis Diagnosis},
   author={Liu, Yun and Wu, Yu-Huan and Zhang, Shi-Chen and Liu, Li and Wu, Min and Cheng, Ming-Ming},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   year={2023}
 }
-````
+
+@inproceedings{liu2020rethinking,
+  title={Rethinking computer-aided tuberculosis diagnosis},
+  author={Liu, Yun and Wu, Yu-Huan and Ban, Yunfeng and Wang, Huifang and Cheng, Ming-Ming},
+  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={2646--2655},
+  year={2020}
+}
+```
 
 ### License
 
