@@ -118,12 +118,12 @@ TP: True Positives; TN: True Negatives; FP: False Positives; FN: False Negatives
 
 `#Total` denotes the total number of test CXR images. We test FPS on a single TITAN XP GPU. For the ground truths, the ratio of positives (TP + FN) is 19.6%, and the ratio of negatives (TN + FP) is 80.4%.
 
-| Methods                      | Backbones        | #FLOPs | \#Params | FPS  | $F_1$ | TP/\#Total | TN/\#Total | FP/\#Total | FN/\#Total |
-|------------------------------|------------------|---------|----------|------|-------|------------|------------|------------|------------|
-| Deformable DETR              | ResNet-50 w/ FPN | 54.07   | 52.67    | 23.0 | 85.6  | 17.5       | 76.6       | 3.8        | 2.1        |
-| SymFormer w/ Deformable DETR | ResNet-50 w/ FPN | 54.08   | 52.69    | 22.5 | 87.9  | 17.1       | 78.2       | 2.2        | 2.5        |
-| SymFormer w/ RetinaNet       | ResNet-50 w/ FPN | 59.14   | 50.03    | 24.3 | 89.0  | 17.8       | 77.8       | 2.6        | 1.8        |
-| SymFormer w/ RetinaNet       | P2T-Small w/ FPN | 55.46   | 45.10    | 17.9 | 89.6  | 18.1       | 77.7       | 2.7        | 1.5        |
+| Methods                      | Backbones        | #FLOPs | #Params | FPS  | $F_1$ | TP/#Total | TN/#Total | FP/#Total | FN/#Total |
+|------------------------------|------------------|--------|---------|------|-------|-----------|-----------|-----------|-----------|
+| Deformable DETR              | ResNet-50 w/ FPN | 54.07  | 52.67   | 23.0 | 85.6  | 17.5      | 76.6      | 3.8       | 2.1       |
+| SymFormer w/ Deformable DETR | ResNet-50 w/ FPN | 54.08  | 52.69   | 22.5 | 87.9  | 17.1      | 78.2      | 2.2       | 2.5       |
+| SymFormer w/ RetinaNet       | ResNet-50 w/ FPN | 59.14  | 50.03   | 24.3 | 89.0  | 17.8      | 77.8      | 2.6       | 1.8       |
+| SymFormer w/ RetinaNet       | P2T-Small w/ FPN | 55.46  | 45.10   | 17.9 | 89.6  | 18.1      | 77.7      | 2.7       | 1.5       |
 
 
 #### TB infection area detection results on our TBX11K test set.
