@@ -39,7 +39,7 @@ Run `pip install -v -e .` to install this repository.
 | DB            | 2014        | 2         | Image-level  | 150       |
 | TBX11K (Ours) | 2020 & 2023 | 4         | Bounding box | 11,200    |
 
-** Split for the TBX11K dataset.** `Active & Latent TB` refers to CXR images with both active and latent TB; `Active TB` refers to CXR images with only active TB; `Latent TB` refers to CXR images with only latent TB; `Uncertain TB` refers to TB CXR images where the type of TB infection cannot be recognized using current medical conditions.
+**Split for the TBX11K dataset.** `Active & Latent TB` refers to CXR images with both active and latent TB; `Active TB` refers to CXR images with only active TB; `Latent TB` refers to CXR images with only latent TB; `Uncertain TB` refers to TB CXR images where the type of TB infection cannot be recognized using current medical conditions.
 
 <table>
     <tr>
