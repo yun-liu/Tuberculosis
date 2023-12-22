@@ -259,7 +259,7 @@ CUDA_VISIBLE_DEVICES=0 python tools/train.py \
 
 ### Test
 
-Use the following commands to generate results on TBX11K test dataset:
+Use the following commands to generate results for the TBX11K test set:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python -W ignore tools/test.py \
