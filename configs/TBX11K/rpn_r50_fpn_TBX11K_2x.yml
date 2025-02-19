@@ -1,0 +1,10 @@
+_base_:
+  - ../_dataset_/TBX11K.yml
+  - ../_common_/default_setting.yml
+  - ../_common_/loop_2x.yml
+  - ../_common_/sgd_0_001.yml
+  - ./rpn_r50_fpn.yml
+
+val_evaluator: &val_evaluator
+  metric: proposal_fast
+test_evaluator: *val_evaluator

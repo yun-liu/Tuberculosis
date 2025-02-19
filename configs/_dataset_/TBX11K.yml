@@ -1,0 +1,56 @@
+data_root: $DATA_ROOT:data/TBX11K/
+num_gpus: $NUM_GPUS:8
+
+train_dataset:
+  type: TBX11KDataset
+  batch_size: 8
+  num_workers: 4
+  data_root: <data_root>
+  data_path:
+    ann_file: annotations/json/TBX11K_train_only_tb.json
+    img_path: imgs/
+  filter_cfg:
+    filter_empty_gt: true
+    min_size: 32
+  batch_sampler:
+    type: AspectRatioBatchSampler
+  transforms:
+    - type: 'LoadImageFromFile'
+    - type: 'LoadAnnotations'
+      with_bbox: true
+    - type: 'Resize'
+      scale: (512, 512)
+      keep_ratio: true
+    - type: 'RandomFlip'
+      prob: 0.5
+    - type: 'PackDetInputs'
+
+val_dataset: &val_dataset
+  type: TBX11KDataset
+  batch_size: 1
+  num_workers: 1
+  data_root: <data_root>
+  data_path:
+    ann_file: annotations/json/TBX11K_val_only_tb.json
+    img_path: imgs/
+  test_mode: true
+  batch_sampler:
+    type: PadBatchSampler
+  transforms:
+    - type: 'LoadImageFromFile'
+    - type: 'LoadAnnotations'
+      with_bbox: true
+    - type: 'Resize'
+      scale: (512, 512)
+      keep_ratio: true
+    - type: 'PackDetInputs'
+      meta_keys: [img_id, img_path, ori_shape, img_shape, 'scale_factor', 'sample_idx']
+
+test_dataset: *val_dataset
+
+val_evaluator: &val_evaluator
+  type: CocoEvaluator
+  ann_file: data/TBX11K/annotations/json/TBX11K_val_only_tb.json
+  metric: bbox
+  format_only: false
+test_evaluator: *val_evaluator

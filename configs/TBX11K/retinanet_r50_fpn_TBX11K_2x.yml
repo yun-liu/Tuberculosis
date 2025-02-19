@@ -1,0 +1,6 @@
+_base_:
+  - ../_dataset_/TBX11K.yml
+  - ../_common_/default_setting.yml
+  - ../_common_/loop_2x.yml
+  - ../_common_/sgd_0_001.yml
+  - ./retinanet_r50_fpn.yml

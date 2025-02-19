@@ -2,6 +2,8 @@
 
 This is the official repository for "Revisiting Computer-Aided Tuberculosis Diagnosis". 
 
+####  News: Our TBX11K now supports [Jittor](https://cg.cs.tsinghua.edu.cn/jittor/)!
+
 <img src="resources/teaser.jpg" width="500">
 
 ### Introduction
@@ -19,13 +21,32 @@ This work extends the preliminary CVPR 2020 version ("Rethinking Computer-aided 
 [[Online Challenge]](https://codalab.lisn.upsaclay.fr/competitions/7916)
 [[中译版]](https://yun-liu.github.io/materials/TPAMI2023_Tuberculosis_CN.pdf)
 
-### Requirements:
+### Getting Started
 
-* torch==1.9.0
-* torchvision==0.10.0
-* mmcv==1.3.12
+#### Install
 
-Run `pip install -v -e .` to install this repository.
+Please first follow the [tutorial](https://github.com/Jittor/jittor) to install jittor.
+Here, we recommend using jittor==1.3.6.10, which we have tested on.
+
+Then, install the `jittordet` by running:
+```
+pip install -v -e .
+```
+
+
+#### Training
+
+You can select the model to be trained with the TBX11K dataset in `configs/TBX11K`:
+```
+python tools/train.py {CONFIG_PATH}
+```
+
+#### Testing
+Tests can be performed after training is complete:
+
+```
+python tools/test.py {CONFIG_PATH}
+```
 
 ### TBX11K Dataset
 
@@ -235,41 +256,6 @@ TP: True Positives; TN: True Negatives; FP: False Positives; FN: False Negatives
 
 **Visualization of the learned deep features from CXR images using SymFormer w/ RetinaNet.** We randomly select CXR images from the TBX11K test set. In each example, the infection areas of active TB, latent TB, and uncertain TB are indicated by boxes colored in green, red, and blue, respectively. The ground-truth boxes are displayed with thick lines, while the detected boxes are shown with thin lines.
 
-### Train
-
-Here, we show the training/testing commands by using P2T-Small as the backbone network and RetinaNet as the base detector.
-
-Download the ImageNet-pretrained model first: [P2T-Small](https://drive.google.com/file/d/1FlwhyVKw0zqj2mux248gIQFQ8DGPi8rS/view?usp=sharing).
-
-Use the following commands to train `SymFormer`:
-
-```bash
-# step I: train detection
-CUDA_VISIBLE_DEVICE=0 python tools/train.py \
-    configs/symformer/symformer_retinanet_p2t_fpn_2x_TBX11K.py \
-    --work-dir work_dirs/symformer_retinanet_p2t/ \
-    --no-validate
-
-# step II: train classification
-CUDA_VISIBLE_DEVICES=0 python tools/train.py \
-    configs/symformer/symformer_retinanet_p2t_cls_fpn_1x_TBX11K.py \
-    --work-dir work_dirs/symformer_retinanet_p2t_cls/ \
-    --no-validate
-```
-
-### Test
-
-Use the following commands to generate results for the TBX11K test set:
-
-```bash
-CUDA_VISIBLE_DEVICES=0 python -W ignore tools/test.py \
-    configs/symformer/symformer_retinanet_p2t_cls_fpn_1x_TBX11K.py \
-    work_dirs/symformer_retinanet_p2t_cls/latest.pth \
-    --out work_dirs/symformer_retinanet_p2t_cls/result/result.pkl \
-    --format-only --cls-filter True \
-    --options "jsonfile_prefix=work_dirs/symformer_retinanet_p2t_cls/result/bbox_result" \
-    --txt work_dirs/symformer_retinanet_p2t_cls/result/cls_result.txt
-```
 
 ### Online Challenge
 
@@ -320,3 +306,15 @@ This repository exemplifies the training/testing commands by using P2T-Small as 
 }
 ```
 
+The Jittor version of the code is based on the [Jittor](https://cg.cs.tsinghua.edu.cn/jittor/) and [nk-det](https://github.com/NK-JittorCV/nk-det), we sincerely appreciate their amazing works.
+```
+@article{hu2020jittor,
+  title={Jittor: a novel deep learning framework with meta-operators and unified graph execution},
+  author={Hu, Shi-Min and Liang, Dun and Yang, Guo-Ye and Yang, Guo-Wei and Zhou, Wen-Yang},
+  journal={Science China Information Sciences},
+  volume={63},
+  number={222103},
+  pages={1--21},
+  year={2020}
+}
+```
