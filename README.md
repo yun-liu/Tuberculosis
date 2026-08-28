@@ -285,7 +285,11 @@ If you are using the code/model/data provided here in a publication, please cons
   title={Revisiting Computer-Aided Tuberculosis Diagnosis},
   author={Liu, Yun and Wu, Yu-Huan and Zhang, Shi-Chen and Liu, Li and Wu, Min and Cheng, Ming-Ming},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2023}
+  volume={46},
+  number={4},
+  pages={2316--2332},
+  year={2023},
+  publisher={IEEE}
 }
 
 @inproceedings{liu2020rethinking,
