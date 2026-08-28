@@ -16,7 +16,7 @@ This work extends the preliminary CVPR 2020 version ("Rethinking Computer-aided 
 [[Project Page]](https://mmcheng.net/tb/)
 [[Dataset on Google Drive]](https://drive.google.com/file/d/1r-oNYTPiPCOUzSjChjCIYTdkjBTugqxR/view?usp=sharing)
 [[Dataset on Baidu Yunpan]](https://pan.baidu.com/s/1INhqaZyPFKWPFXgynerXew)
-[[Online Challenge]](https://codalab.lisn.upsaclay.fr/competitions/7916)
+[[Online Challenge]](https://www.codabench.org/competitions/17672/)
 [[中译版]](https://yun-liu.github.io/materials/TPAMI2023_Tuberculosis_CN.pdf)
 
 ### Requirements:
@@ -273,7 +273,7 @@ CUDA_VISIBLE_DEVICES=0 python -W ignore tools/test.py \
 
 ### Online Challenge
 
-We only release the ground truths for the training and validation sets of our TBX11K dataset. The test set is retained as an online challenge for TB X-ray classification and TB infection area detection. To participate this challenge, you need to create an account on [CodaLab](https://codalab.lisn.upsaclay.fr/) and register for the [TBX11K Tuberculosis Classification and Detection Challenge](https://codalab.lisn.upsaclay.fr/competitions/7916). Please refer to this [webpage](https://codalab.lisn.upsaclay.fr/competitions/7916#learn_the_details-evaluation) or our paper to see the evaluation metrics. Then, open the "Participate" tab to read the [submission guidelines](https://codalab.lisn.upsaclay.fr/competitions/7916#participate) carefully. Next, you can upload your submission. Once uploaded, your submissions will be evaluated automatically.
+We only release the ground truths for the training and validation sets of our TBX11K dataset. The test set is retained as an online challenge for TB X-ray classification and TB infection area detection. To participate this challenge, you need to create an account on [CodaLab](https://www.codabench.org/) and register for the [TBX11K Challenge](https://www.codabench.org/competitions/17672/). Please refer to our paper to see the evaluation metrics.
 
 
 ### Citation
