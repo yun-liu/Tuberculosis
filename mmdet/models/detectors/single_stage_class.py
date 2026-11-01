@@ -159,8 +159,14 @@ class SingleStageClsDetector(BaseDetector):
         x = self.extract_feat(img)
         if self.train_cfg['stage'] == 'resnet_classify' or self.train_cfg['stage'] == 'resnet_finetune':
             img_cls_scores = self.classifier(x[-1])
-            img_cls_loss = F.cross_entropy(img_cls_scores.squeeze(), gt_classes.squeeze(),
-                                            weight=torch.Tensor([1., 1., 4.]).cuda())
+            img_cls_scores = img_cls_scores.squeeze(-1).squeeze(-1)
+            gt_classes = gt_classes.reshape(-1).long()
+
+            img_cls_loss = F.cross_entropy(
+                img_cls_scores,
+                gt_classes,
+                weight=img_cls_scores.new_tensor([1.0, 1.0, 4.0])
+            )
             return {'img_cls_loss': img_cls_loss}
         if self.with_neck:
             x = self.neck(x)
